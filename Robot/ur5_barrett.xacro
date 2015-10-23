@@ -20,7 +20,8 @@
 	<!-- property list -->
 	
 	<xacro:property name="robot_stand_height" value="0.50"/>
-	<xacro:property name="kinect_stand_length" value="0.20"/>
+	<xacro:property name="kinect_stand_length" value="0.75"/>
+	<xacro:property name="kinect_stand_distance" value="0.10"/>
 	<xacro:ur5_robot prefix="" joint_limited="false"/>
 	
 	<!-- color macros -->
@@ -62,13 +63,13 @@
 	<link name="kinect_stand_dist">
 		<visual>
 		<geometry>
-		<cylinder radius="0.03" length="${kinect_stand_length}"/>
+		<cylinder radius="0.03" length="${kinect_stand_distance}"/>
 		</geometry>
 		<material name="orange_transparent"/>
 		</visual>
 		<collision>
 		<geometry>
-		<cylinder radius="0.03" length="${kinect_stand_length}"/>
+		<cylinder radius="0.03" length="${kinect_stand_distance}"/>
 		</geometry>
 		<material name="blue_transparent"/>
 		</collision>
@@ -76,13 +77,13 @@
 	<link name="kinect_stand">
 		<visual>
 		<geometry>
-		<cylinder radius="0.03" length="${robot_stand_height*2}"/>
+		<cylinder radius="0.03" length="${kinect_stand_length}"/>
 		</geometry>
 		<material name="orange_transparent"/>
 		</visual>
 		<collision>
 		<geometry>
-		<cylinder radius="0.03" length="${robot_stand_height*2}"/>
+		<cylinder radius="0.03" length="${kinect_stand_length}"/>
 		</geometry>
 		<material name="blue_transparent"/>
 		</collision>
@@ -111,12 +112,12 @@
 	<joint name="base_to_kinect_stand_dist" type="fixed">
 		<parent link="stand"/>
 		<child link="kinect_stand_dist"/>
-		<origin xyz="${(kinect_stand_length*0.5)+0.0735} 0 0" rpy="0 1.57 0"/>
+		<origin xyz="0 ${-(kinect_stand_distance*0.5)-0.0735} 0" rpy="1.57 0 0"/>
 	</joint>
 	<joint name="kinect_stand1" type="fixed">
 		<parent link="kinect_stand_dist"/>
 		<child link="kinect_stand"/>
-		<origin xyz="${-robot_stand_height} 0 ${kinect_stand_length*0.5}" rpy="0 -1.57 0"/>
+		<origin xyz="0 ${kinect_stand_length*0.5} ${(kinect_stand_distance*0.5)+0.015}" rpy="-1.57 0 0"/>
 	</joint>
 
 		
@@ -124,7 +125,7 @@
 		<parent link="stand"/>
 		<!--child link="${arm_prefix}base_link"/-->
 		<child link="base_link"/>
-		<origin xyz="0 0 ${robot_stand_height * 0.5}" rpy="0 0 3.14"/>
+		<origin xyz="0 0 ${robot_stand_height * 0.5}" rpy="0 0 1.57"/>
 	</joint>
 		
 	
