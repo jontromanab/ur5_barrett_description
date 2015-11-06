@@ -19,8 +19,8 @@
 
 	<!-- property list -->
 	
-	<xacro:property name="robot_stand_height" value="0.50"/>
-	<xacro:property name="kinect_stand_length" value="0.75"/>
+	<xacro:property name="robot_stand_height" value="0.75"/>
+	<xacro:property name="kinect_stand_length" value="1.25"/>
 	<xacro:property name="kinect_stand_distance" value="0.10"/>
 	<xacro:ur5_robot prefix="" joint_limited="false"/>
 	
@@ -107,7 +107,7 @@
 	<joint name="world_to_stand" type="fixed">
 		<parent link="world"/>
 		<child link="stand"/>
-		<origin xyz="0 0 ${robot_stand_height * 0.5}" rpy="0 0 3.14"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
 	</joint>
 	<joint name="base_to_kinect_stand_dist" type="fixed">
 		<parent link="stand"/>
