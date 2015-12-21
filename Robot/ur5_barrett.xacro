@@ -13,14 +13,14 @@
 	<xacro:include filename="$(find ur5_barrett_description)/urdf/kinect_properties.xacro"/>
 	<xacro:include filename="$(find ur5_barrett_description)/urdf/kinect_gazebo.urdf.xacro"/>
 
-	<xacro:include filename="$(find ur5_barrett_description)/urdf/bh280.urdf.xacro"/>
+	<xacro:include filename="$(find ur5_barrett_description)/urdf/bh282.urdf.xacro"/>
 	<xacro:include filename="$(find ur5_barrett_description)/urdf/bh282.gazebo"/>
 	
 
 	<!-- property list -->
 	
 	<xacro:property name="robot_stand_height" value="0.75"/>
-	<xacro:property name="kinect_stand_length" value="1.25"/>
+	<xacro:property name="kinect_stand_length" value="1"/>
 	<xacro:property name="kinect_stand_distance" value="0.10"/>
 	<xacro:ur5_robot prefix="" joint_limited="false"/>
 	
