@@ -20,7 +20,7 @@
 	<!-- property list -->
 	
 	<xacro:property name="robot_stand_height" value="0.75"/>
-	<xacro:property name="kinect_stand_length" value="1"/>
+	<xacro:property name="kinect_stand_length" value="0.9"/>
 	<xacro:property name="kinect_stand_distance" value="0.10"/>
 	<xacro:ur5_robot prefix="" joint_limited="false"/>
 	
